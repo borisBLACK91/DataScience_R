@@ -1,0 +1,11 @@
+#install.packages("dplyr")
+library(dplyr)
+#install.packages("dslabs")
+library(dslabs)
+murders <- mutate(murders, rate=total/population*100000)
+head(murders)
+str(murders)
+#new_table <- select(murders, state, region, rate)
+#filter(new_table, rate<=0.71)
+murders %>% select(state, region, rate) %>% filter(rate<=0.71)
+
